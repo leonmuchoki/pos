@@ -17,7 +17,8 @@ class MenusController < ApplicationController
   	  flash[:notice] = "Menu type added successfully."
   	  redirect_to @menu 
   	else
-  	  #will add error handler here
+  	  flash.now[:alert] = "Menu type has not been created."
+  	  render "new"
   	end
   end
 
