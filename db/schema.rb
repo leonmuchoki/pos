@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171027124624) do
+ActiveRecord::Schema.define(version: 20171028145723) do
+
+  create_table "drinks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name"
+    t.decimal  "price",      precision: 8, scale: 2
+    t.integer  "menu_id"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.index ["menu_id"], name: "index_drinks_on_menu_id", using: :btree
+  end
+
+  create_table "foods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name"
+    t.decimal  "price",      precision: 8, scale: 2
+    t.integer  "menu_id"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.index ["menu_id"], name: "index_foods_on_menu_id", using: :btree
+  end
+
+  create_table "menus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "food_id"
+    t.integer  "drink_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "email",                  default: "", null: false
@@ -29,4 +55,6 @@ ActiveRecord::Schema.define(version: 20171027124624) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "drinks", "menus"
+  add_foreign_key "foods", "menus"
 end
