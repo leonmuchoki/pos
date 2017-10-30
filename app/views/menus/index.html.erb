@@ -5,13 +5,31 @@
   	  <header>
   	  	<div class="header-menu">
   	  	  <div class="header-select-menu-type">
-  	  	  	<%= select_tag 'menu-type', options_from_collection_for_select(@menus, "id","name") %>
+  	  	  	
   	  	  </div>
   	  	  <div class="new-menu-links">
   	  	    <%= link_to "New Menu type", new_menu_path %>
   	      </div>
   	  	</div>
   	  </header>
+  	  <div class="container">
+  	  	<div class="row">
+  	  	  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  	  	  	<div class="menu-type-items">
+  	  	  	  <% @menus.each do |menu| %>
+                <div class="col-sm-6 col-md-4">
+                  <div class="thumbnail">
+                    <%= image_tag "food.jpg" %>
+                    <div class="caption">
+                      <h2><%= link_to menu.name, menu %></h2>
+                    </div>
+                  </div>
+                </div>
+  	  	  	  <% end %>
+  	  	  	</div>
+  	  	  </div>
+  	  	</div>
+  	  </div>
   	</div>
   </div>
 </div>

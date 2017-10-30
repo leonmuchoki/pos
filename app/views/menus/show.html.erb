@@ -1,1 +1,27 @@
-<h1><%= @menu.name %></h1>
+<div class="container">
+  <div class="row">
+  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  	  <header>
+  	  	<div class="menu-show-header-title">
+  	  		<h1><%= @menu.name %></h1>
+  	  	</div>
+  	  	<div class="menu-show-header-links">
+  	  		<%= link_to "Add Food", new_menu_food_path(@menu) %>
+  	  	</div>
+  	  </header>
+  	  <div class="menu-show-foods">
+        <% @menu.foods.each do |food| %>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <%= image_tag food.image %>
+              <div class="caption">
+                <h4><%= food.name %></h2>
+                <h4><%= food.price %></h4>
+              </div>
+            </div>
+          </div>
+          <% end %> 
+      </div>
+  	</div>
+  </div>
+</div>

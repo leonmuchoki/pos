@@ -1,0 +1,22 @@
+<div id="show-food">
+  <header>
+  	<h1><%= @menu.name %></h1>
+  </header>
+
+  <header>
+  	<div class="col-sm-6 col-md-4">
+  	  <div class="thumbnail">
+  	  	<%= image_tag @food.image %>
+  	    <div class="caption">
+  	  	  <h2><%= @food.name %></h2>
+  	      <p><%= @food.price %></p>
+          <ul class="actions">
+            <li><%= link_to "Edit Food", [:edit, @menu, @food], class: "edit" %></li>
+          </ul>
+  	    </div>
+      </div>
+  	</div>
+  	
+  	<div >
+  </header>
+</div>

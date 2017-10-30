@@ -12,8 +12,6 @@ RSpec.feature "Users can view menu types" do
   	visit "/"
 
   	click_link "Menu"
-  	
-    #expect(page).to have_select('menu_type', selected: 'Breakfast')
-    expect(page).to have_select 'menu-type', with_options: [menu.name]
+    expect(page).to have_link menu.name
   end
 end

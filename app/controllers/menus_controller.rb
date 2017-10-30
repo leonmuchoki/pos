@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
   def index
   	@menus = Menu.all
+  	#@selected_menu_type_id = 
   end
 
   def show
