@@ -1,11 +1,11 @@
 require "rails_helper"
 
-RSpec.feature "Users can view food items" do 
+RSpec.feature "Users can view drink items" do 
   let!(:user) { FactoryBot.create(:user) }
 
   before do
   	login_as(user)
-    
+
   	breakfast = FactoryBot.create(:menu, name: "Breakfast")
   	photo = Rack::Test::UploadedFile.new('spec/fixtures/greentea.jpg', 'image/jpg')
   	FactoryBot.create(:drink, menu: breakfast,

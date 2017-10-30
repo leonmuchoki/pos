@@ -1,5 +1,6 @@
 class DrinksController < ApplicationController
   before_action :set_menu
+  before_action :set_drink, only: [:show, :edit, :update]
 
   def show
   end
@@ -21,9 +22,25 @@ class DrinksController < ApplicationController
   	end
   end
 
+  def edit
+  end
+
+  def update
+    if @drink.update(drink_params)
+      flash[:notice] = "Drink has been updated."
+      redirect_to [@menu, @drink]
+    else
+      flash.now[:alert] = "Drink has not been updated."
+    end
+  end
+
   private
     def set_menu
       @menu = Menu.find(params[:menu_id])
+    end
+
+    def set_drink
+      @drink = @menu.drinks.find(params[:id])
     end
 
     def drink_params

@@ -1,2 +1,22 @@
-<h1>Drinks#show</h1>
-<p>Find me in app/views/drinks/show.html.erb</p>
+<div id="show-drink">
+  <header>
+  	<h1><%= @menu.name %></h1>
+  </header>
+
+  <header>
+  	<div class="col-sm-6 col-md-4">
+  	  <div class="thumbnail">
+  	  	<%= image_tag @drink.image %>
+  	    <div class="caption">
+  	  	  <h2><%= @drink.name %></h2>
+  	      <p><%= @drink.price %></p>
+          <ul class="actions">
+            <li><%= link_to "Edit Drink", [:edit, @menu, @drink], class: "edit" %></li>
+          </ul>
+  	    </div>
+      </div>
+  	</div>
+  	
+  	<div >
+  </header>
+</div>
