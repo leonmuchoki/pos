@@ -6,7 +6,8 @@
   	  		<h1><%= @menu.name %></h1>
   	  	</div>
   	  	<div class="menu-show-header-links">
-  	  		<%= link_to "Add Food", new_menu_food_path(@menu) %>
+  	  		<%= link_to "Add Food", new_menu_food_path(@menu) %> |
+          <%= link_to "Add Drink", new_menu_drink_path(@menu) %>
   	  	</div>
   	  </header>
   	  <div class="menu-show-foods">
@@ -17,6 +18,21 @@
               <div class="caption">
                 <h4><%= food.name %></h2>
                 <h4><%= food.price %></h4>
+                <%= link_to "Edit Food", [:edit, @menu, food], class: "edit" %>
+              </div>
+            </div>
+          </div>
+          <% end %> 
+      </div>
+        <div class="menu-show-drinks">
+        <% @menu.drinks.each do |drink| %>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <%= image_tag drink.image %>
+              <div class="caption">
+                <h4><%= drink.name %></h2>
+                <h4><%= drink.price %></h4>
+                <%= link_to "Edit Drink", [:edit, @menu, drink], class: "edit" %>
               </div>
             </div>
           </div>
