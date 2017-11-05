@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <table class="table table-hover" id="table-order-food">
+    <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Add to Order</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @foods.each do |food| %>
+            <tr>
+              <td></td>
+              <td><%= food.name %>
+                  <%= hidden_field_tag :name, food.name, id: "order-food-name" %>
+                  <%= hidden_field_tag :food_id, food.id, id: "order-food-id" %>
+              </td>
+              <td><%= food.price %>
+                  <%= hidden_field_tag :price, food.price, id: "order-food-price" %>
+              </td>
+              <td><%= number_field_tag "quantity","1", id: "order-food-quantity" %></td>
+              <td><a href="#" class="ui-btn ui-btn-inline">Add to Order</a></td>
+            </tr>
+          <% end %>
+        </tbody>
+  </table>
+</div>

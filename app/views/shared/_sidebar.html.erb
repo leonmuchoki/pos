@@ -1,13 +1,14 @@
 <div class="wrapper">
-  <nav id="sidebar">
-  	<!-- Sidebar Header -->
-  	<div class="sidebar-header">
-  	  <h3>POS Items</h3>
-  	</div>
-
-  	<!-- Sidebar Links -->
-  	<ul class="list-unstyled components">
-  	  <li class="active"><%= link_to "Menu", menus_path %></li>
-  	</ul>
-  </nav>
+  <div class="panel panel-default">
+    <div class="panel-header"></div>
+    <div class="panel-body">
+      <ul class="list-unstyled components">
+      <li class="active"><%= link_to "Menu", menus_path %></li>
+      <li><%= link_to "Order", orders_path %></li>
+      <li><%= link_to "Reports", reports_path %></li>
+      <li><%= link_to "Users", "" %></li>
+      <li><%= link_to "Tables", "" %></li>
+    </ul>
+    </div>
+  </div>
 </div>

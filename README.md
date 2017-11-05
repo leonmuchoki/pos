@@ -1,24 +1,28 @@
-# README
+# POS - Crossover Assignment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## System requirements and setup:
 
 * Ruby version
+2.2.6
 
-* System dependencies
+* Rails version
+5.0.0
+
 
 * Configuration
+bundle install
+
 
 * Database creation
+rake db:create
 
 * Database initialization
+rails db:migrate && rails db:migrate RAILS_ENV=test
 
 * How to run the test suite
+bundle exec rspec
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
 * ...

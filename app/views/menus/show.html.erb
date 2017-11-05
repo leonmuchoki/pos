@@ -3,9 +3,12 @@
   	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   	  <header>
   	  	<div class="menu-show-header-title">
-  	  		<h1><%= @menu.name %></h1>
+  	  		<h1><%= @menu.name %> Menu</h1>
   	  	</div>
   	  	<div class="menu-show-header-links">
+          <%= link_to "Create New Order", new_order_path %> |
+          <%= link_to "Foods", new_menu_food_path(@menu) %> |
+          <%= link_to "Drinks", new_menu_drink_path(@menu) %> |
   	  		<%= link_to "Add Food", new_menu_food_path(@menu) %> |
           <%= link_to "Add Drink", new_menu_drink_path(@menu) %>
   	  	</div>

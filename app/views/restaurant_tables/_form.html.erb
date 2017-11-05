@@ -1,0 +1,11 @@
+<%= form_for(restaurant_table) do |f| %>
+  <div class="form-group">
+  	<%= f.label :table_no %><br>
+  	<%= f.number_field :table_no %>
+  </div>
+  <div class="form-group">
+  	<%= f.label :accomodates %><br>
+  	<%= f.number_field :accomodates %>
+  </div><br>
+  <%= f.submit %>
+<% end %>

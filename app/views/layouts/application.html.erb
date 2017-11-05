@@ -5,18 +5,29 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'default', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   	<%= render partial: "shared/navbar" %>
-  	<div class="container-fluid">
+
+  	<div class="container">
   	  <div class="row">
-  	  	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-  	  		<%= render partial: "shared/sidebar" %>
+
+  	  	<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+  	  		
+          <% if user_signed_in? %>
+            <%= render partial: "shared/sidebar" %>
+          <% end %>
+
   	  	</div>
-  	  	<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-  	  	  <%= yield %>
+
+  	  	<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+          
+          <%= render :partial => 'template/alerts' %>
+  	  	  
+          <%= yield %>
+          
   	  	</div>
   	  </div>
   	</div>

@@ -9,13 +9,6 @@
       <a class="navbar-brand" href="#">POS</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <% flash.each do |key, message| %>
-            <div><%= message %></div>
-          <% end %>
-        </li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
         <% unless user_signed_in? %>
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

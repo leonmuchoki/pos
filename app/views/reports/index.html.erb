@@ -1,0 +1,24 @@
+  <div class="panel panel-default">
+  	  	<div class="panel-heading">
+  	  		<p>You are served by: <%= current_user.email %></p>
+  	  	</div>
+  	  	<div class="panel-body">
+
+  	  	  <!-- Nav tabs -->
+  	  	  <ul class="nav nav-tabs">
+  	  	  	<li class="active"><a href="#report-orders" data-toggle="tab">ORDERS</a></li>
+  	  	  	<li><a href="#report-staff" data-toggle="tab">Staff</a></li>
+  	  	  </ul>
+
+  	  	  <!-- Tab panes -->
+  	  	  <div class="tab-content">
+  	  	  	<div class="tab-pane active" id="report-orders">
+  	  	  	  <%= render :partial => 'reports/report_order.html.erb' %>
+  	  	  	</div>
+
+  	  	  	<div class="tab-pane" id="report-staff">
+  	  	  	  <%= render :partial => 'reports/report_staff.html.erb' %>
+  	  	  	</div>
+  	  	  </div>
+  	  	</div>
+  	  </div>

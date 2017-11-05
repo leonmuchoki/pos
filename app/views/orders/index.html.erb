@@ -1,0 +1,28 @@
+<header>
+  <h1>
+    <small>Orders</small>
+  </h1>
+</header>
+
+<div class="table-responsive">
+  <table class="table table-hover" id="table-orders">
+    <thead>
+          <tr>
+            <th>#</th>
+            <th>Amount</th>
+            <th>Processed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |o| %>
+            <tr>
+              <td><%= o.id %></td>
+              <td><%= o.amount %>
+              </td>
+              <td><%= o.processed %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+  </table>
+</div>

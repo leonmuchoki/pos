@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   
-  get 'drinks/show'
-
-  get 'drinks/new'
-
   resources :menus do 
     resources :foods
     resources :drinks
+  end
+
+  resources :orders
+
+  resources :reports
+
+  namespace :api do
+    resources :orders
   end
 
   root "welcome#index"

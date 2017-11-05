@@ -1,0 +1,25 @@
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Add to Order</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @drinks.each do |drink| %>
+            <tr>
+              <td><%= image_tag drink.image.url(:thumb, timestamp:false) %></td>
+              <td><%= drink.name %></td>
+              <td><%= drink.price %></td>
+              <td><%= text_field_tag "quantity" %></td>
+              <td><%= link_to "Add to Order", class: "btn-primary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+  </table>
+</div>

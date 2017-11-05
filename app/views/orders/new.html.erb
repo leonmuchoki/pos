@@ -1,0 +1,43 @@
+<header>
+  <h1>
+    <small>New Order</small>
+  </h1>
+</header>
+
+<div class="container">
+  <div class="row">
+  	<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+  	  <div class="panel panel-default">
+  	  	<div class="panel-heading">
+  	  		<p>You are served by: <%= current_user.email %></p>
+  	  		 <%= hidden_field_tag :user_id, current_user.id, id: "order-staff-id" %>
+  	  		 <%= collection_select(:order, :restaurant_table_id,@rtables, :id,:table_no,{prompt: "Select a table"},{ class: 'restaurant-table-select' }) %>
+  	  	</div>
+  	  	<div class="panel-body">
+
+  	  	  <!-- Nav tabs -->
+  	  	  <ul class="nav nav-tabs">
+  	  	  	<li class="active"><a href="#order-food" data-toggle="tab">Food</a></li>
+  	  	  	<li><a href="#order-drink" data-toggle="tab">Drinks</a></li>
+  	  	  </ul>
+
+  	  	  <!-- Tab panes -->
+  	  	  <div class="tab-content">
+  	  	  	<div class="tab-pane active" id="order-food">
+  	  	  	  <%= render :partial => 'orders/order_food.html.erb' %>
+  	  	  	</div>
+
+  	  	  	<div class="tab-pane" id="order-drink">
+  	  	  	  <%= render :partial => 'orders/order_drink.html.erb' %>
+  	  	  	</div>
+  	  	  </div>
+  	  	</div>
+  	  </div>
+  	  
+  	</div>
+  	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+  	  <!-- order slip -->
+  	  <%= render :partial => 'orders/order_slip.html.erb' %>
+  	</div>
+  </div>
+</div>

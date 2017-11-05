@@ -1,5 +1,9 @@
 class Food < ApplicationRecord
   belongs_to :menu
+
+  has_many :order_foods, inverse_of: :food
+  has_many :orders, through: :order_foods
+
   has_attached_file :image
   
   #do_not_validate_attachment_file_type :image
